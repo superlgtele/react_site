@@ -2,10 +2,13 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import ShoesData from "./data";
+import { Link, Route } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function App() {
   let [title, changetitle] = useState(["강남우동맛집", "일산마포갈매기"]);
   let [shoes, changeshoes] = useState(ShoesData);
+  let history = useHistory();
 
   function copy() {
     let newArray = [...title];
@@ -19,6 +22,19 @@ function App() {
         <div>Blog</div>
       </div>
       <button onClick={copy}>제목바꾸기</button>
+
+      <Link to="/detail">디테일페이지</Link>
+      <Route path="/detail">
+        <div>Show Detail-Page</div>
+        <button
+          onClick={() => {
+            history.goBack();
+          }}
+        >
+          뒤로가기
+        </button>
+      </Route>
+
       <div className="list">
         <h3>{title[0]}</h3>
         <p>2월 18일 발행</p>
