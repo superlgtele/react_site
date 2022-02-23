@@ -18,3 +18,14 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.my-alert {
+  background: #607bf1;
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 400px;
+}
+
+.my-alert p {
+  margin-bottom: 0;
+}
